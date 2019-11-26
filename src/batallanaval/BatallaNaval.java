@@ -5,6 +5,8 @@
  */
 package batallanaval;
 
+import java.util.Scanner;
+
 /**
  *
  * @author manueltejadaguzman
@@ -16,6 +18,12 @@ public class BatallaNaval {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Nombre del jugador: ");
+        String nombre=sc.nextLine();
+        Jugador yo=new Jugador(nombre);
+        yo.ubicarBarcos();
+        yo.getTablero();
     }
     
 }
