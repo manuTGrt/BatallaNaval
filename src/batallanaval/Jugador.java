@@ -57,7 +57,7 @@ public class Jugador {
                 }
             } while (!insertado);
         }
-        /*for (int i = 1; i <= 3; i++) {
+        for (int i = 1; i <= 3; i++) {
             do {
                 System.out.println("Indica dónde se pondrá el barco " + i + " de 3 casillas?");
                 System.out.println("Cordenada x: ");
@@ -86,7 +86,7 @@ public class Jugador {
                     System.out.println("El barco no cabe, insertelo de nuevo.");
                 }
             } while (!insertado);
-        }*/
+        }
     }
 
     public void getTablero() {

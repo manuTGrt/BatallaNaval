@@ -33,9 +33,7 @@ public class Tablero {
             if (x-1+tamano<10) {
                 for (int i = 0; i < tamano; i++) {
                     tablero[x-1+i][y-1]=1;
-                    System.out.println("la i es: "+i);
                 }
-                System.out.println("-------------------------------------------");
                 insertado=true;
                 numerobarcos++;
                 barcos[numerobarcos]=new Barco(x,y,tamano,"horizontal");
@@ -45,9 +43,7 @@ public class Tablero {
             if (y-1+tamano<10) {
                 for (int i = 0; i < tamano; i++) {
                     tablero[x-1][y-1+i]=1;
-                    System.out.println("la i es: "+i);
                 }
-                System.out.println("-------------------------------------------");
                 insertado=true;
                 numerobarcos++;
                 barcos[numerobarcos]=new Barco(x,y,tamano,"vertical");
