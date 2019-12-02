@@ -13,4 +13,9 @@ public class Disparo {
     int cordenadaX;
     int cordenadaY;
     Tablero tableroAtacado;
+    public Disparo(int corx, int cory,Tablero tabla){
+        cordenadaX=corx;
+        cordenadaY=cory;
+        tableroAtacado=tabla;
+    }
 }

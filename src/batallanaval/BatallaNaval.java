@@ -22,6 +22,7 @@ public class BatallaNaval {
         System.out.println("Nombre del jugador: ");
         String nombre=sc.nextLine();
         Jugador yo=new Jugador(nombre);
+        yo.getTablero();
         yo.ubicarBarcos();
         yo.getTablero();
     }

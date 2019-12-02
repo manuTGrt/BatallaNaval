@@ -13,35 +13,58 @@ package batallanaval;
  */
 public class Tablero {
     int[][] tablero;
+    Barco[] barcos;
+    int numerobarcos;
     public Tablero(){
+        tablero=new int[10][10];
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 tablero[i][j]=0;
             }
         }
+        barcos=new Barco[10];
+        numerobarcos=0;
     }
-    public boolean ubicaBarco(String corx,String cory,String HoV,int tamano){
+    public boolean ubicaBarco(int x,int y,String HoV,int tamano){
         boolean insertado=false;
-        int x=Integer.getInteger(corx);
-        int y=Integer.getInteger(cory);
-        if (HoV=="horizontal") {
-            for (int i = y; i < tamano; i++) {
-                tablero[x-1][y-1+i]=1;
+        if (HoV.equals("horizontal")) {
+            if (x-1+tamano<10) {
+                for (int i = 0; i < tamano; i++) {
+                    tablero[x-1][y-1+i]=1;
+                    System.out.println("la i es: "+i);
+                }
+                System.out.println("-------------------------------------------");
+                insertado=true;
+                numerobarcos++;
+                barcos[numerobarcos]=new Barco(x,y,tamano,"horizontal");
             }
         }
         else{
-            for (int i = x; i < tamano; i++) {
-                tablero[x-1+i][y-1]=1;
+            if (y-1+tamano<10) {
+                for (int i = 0; i < tamano; i++) {
+                    tablero[x-1+i][y-1]=1;
+                    System.out.println("la i es: "+i);
+                }
+                System.out.println("-------------------------------------------");
+                insertado=true;
+                numerobarcos++;
+                barcos[numerobarcos]=new Barco(x,y,tamano,"vertical");
             }
         }
+        verTablero();
+        System.out.println("");
         return insertado;
     }
     
     public void verTablero(){
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
-                System.out.println(" "+tablero[i][j]+" ");
+                System.out.print(tablero[i][j]+" ");
             }
+            System.out.println("");
         }
+    }
+    public int getNumBarcos(){
+        return numerobarcos;
     }
 }
