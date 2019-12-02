@@ -27,10 +27,12 @@ public class Tablero {
     }
     public boolean ubicaBarco(int x,int y,String HoV,int tamano){
         boolean insertado=false;
+        boolean encontrado=false;
+        
         if (HoV.equals("horizontal")) {
             if (x-1+tamano<10) {
                 for (int i = 0; i < tamano; i++) {
-                    tablero[x-1][y-1+i]=1;
+                    tablero[x-1+i][y-1]=1;
                     System.out.println("la i es: "+i);
                 }
                 System.out.println("-------------------------------------------");
@@ -42,7 +44,7 @@ public class Tablero {
         else{
             if (y-1+tamano<10) {
                 for (int i = 0; i < tamano; i++) {
-                    tablero[x-1+i][y-1]=1;
+                    tablero[x-1][y-1+i]=1;
                     System.out.println("la i es: "+i);
                 }
                 System.out.println("-------------------------------------------");
@@ -59,7 +61,7 @@ public class Tablero {
     public void verTablero(){
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
-                System.out.print(tablero[i][j]+" ");
+                System.out.print(tablero[j][i]+" ");
             }
             System.out.println("");
         }

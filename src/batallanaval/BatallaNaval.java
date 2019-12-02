@@ -24,7 +24,6 @@ public class BatallaNaval {
         Jugador yo=new Jugador(nombre);
         yo.getTablero();
         yo.ubicarBarcos();
-        yo.getTablero();
     }
     
 }
